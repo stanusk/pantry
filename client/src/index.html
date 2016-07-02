@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>PantryApp</title>
+		<meta name="description" content="Vectary pantry consumption tracker">
+
+		<link rel="stylesheet" type="text/css" href="_shared/styles/style.css">
+	</head>
+
+	<body class="main-wrapper" ng-app="pantry">
+		<ui-view></ui-view>
+	</body>
+
+	<!-- external libraries -->
+	<script src="_shared/vendor/angular/angular.js"></script>
+	<script src="_shared/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
+	<!-- config -->
+	<script src="config/config.js"></script>
+
+	<!-- app -->
+	<script src="app/app.module.js"></script>
+	<script src="app/app.routing.js"></script>
+
+
+</html>

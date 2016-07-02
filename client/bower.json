@@ -1,0 +1,11 @@
+{
+  "name": "pantry",
+  "authors": [
+    "Stanislav Kucharik <kucharik.s@gmail.com>"
+  ],
+  "description": "vectary pantry tracker",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-ui-router": "^0.3.1"
+  }
+}
