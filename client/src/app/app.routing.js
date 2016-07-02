@@ -18,21 +18,37 @@
 				'pantry.list',
 				{
 					url: '/list',
-					template: '<pantry-list></pantry-list>'
+					templateUrl: 'app/list/pantry-list.html',
+					controller: 'pantryListCtrl',
+					controllerAs: 'vm',
+					resolve: {
+						items: function (app) {
+							// TODO: redo for async use once BE done
+							return app.getItems();
+						},
+						users: function (app) {
+							// TODO: redo for async use once BE done
+							return app.getUsers();
+						}
+					}
 				}
 			)
 			.state(
 				'pantry.stats',
 				{
 					url: '/stats',
-					template: '<pantry-stats></pantry-stats>'
+					templateUrl: 'app/stats/pantry-stats.html',
+					controller: 'pantryStatsCtrl',
+					controllerAs: 'vm'
 				}
 			)
 			.state(
 				'pantry.admin',
 				{
 					url: '/admin',
-					template: '<pantry-admin></pantry-admin>'
+					templateUrl: 'app/admin/pantry-admin.html',
+					controller: 'pantryAdminCtrl',
+					controllerAs: 'vm'
 				}
 			)
 		;

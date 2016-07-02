@@ -1,0 +1,38 @@
+#welcome {
+	margin-top: 1.5em;
+
+	h2 {
+		text-align: center;
+	}
+}
+
+#pantry-selection {
+	margin-top: 1.5em;
+
+	ul {
+		list-style: none;
+
+		label {
+			font-size: 1.5em;
+			cursor: pointer;
+
+			input {
+				cursor: inherit	;
+			}
+		}
+	}
+}
+
+#btn-submit {
+	width: 30%;
+	margin-left: 35%;
+	margin-top: 1.5em;
+
+	.btn-user {
+		width: 85%;
+	}
+
+	.dropdown-toggle {
+		width: 15%
+	}
+}

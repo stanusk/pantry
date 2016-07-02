@@ -1,6 +1,6 @@
 ;(function () {
 	'use strict';
-	angular.module('pantry', ['ui.router'])
+	angular.module('pantry', ['ui.router', 'ui.bootstrap'])
 		.run(run);
 
 	function run ($http) {
