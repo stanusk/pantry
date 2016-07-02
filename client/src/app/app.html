@@ -1,19 +1,30 @@
-<ul>
-	<li
-		ui-sref="pantry.list"
-	>
-		List
-	</li>
-	<li
-		ui-sref="pantry.stats"
-	>
-		Stats
-	</li>
-	<li
-		ui-sref="pantry.admin"
-	>
-		Admin
-	</li>
-</ul>
+<div class="body-cont container-fluid row">
+	<div class="col-md-8 col-md-offset-2">
+		<nav>
+			<ul class="nav nav-pills nav-justified">
+				<li
+					ui-sref="pantry.list"
+					ui-sref-active="active"
+				>
+					<a>List</a>
+				</li>
+				<li
+					ui-sref="pantry.stats"
+					ui-sref-active="active"
+				>
+					<a>Stats</a>
+				</li>
+				<li
+					ui-sref="pantry.admin"
+					ui-sref-active="active"
+				>
+					<a>Admin</a>
+				</li>
+			</ul>
+		</nav>
 
-<ui-view></ui-view>
+		<main>
+			<ui-view></ui-view>
+		</main>
+	</div>
+</div>
