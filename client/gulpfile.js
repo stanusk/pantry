@@ -305,8 +305,10 @@ gulp.task('default', ['bower', 'copyApp', 'copyConfig',
       reload(file.path);
     }
   });
-  gulp.watch(['src/*.html'], ['bs-reload']);
-  gulp.watch(['src/app/*.js', 'src/app/**/*.js', 'js/*.js'], ['bs-reload']);
+  gulp.watch(['src/*.html'], ['bower', 'copyApp', 'copyConfig',
+    'copyIndex', 'copyVendor', 'copyJs','bs-reload']);
+  gulp.watch(['src/app/*.js', 'src/app/**/*.js', 'js/*.js'], ['copyApp', 'copyConfig',
+    'copyIndex', 'copyVendor', 'copyJs','bs-reload']);
   gulp.watch(['./src/_shared/styles/*.scss', './src/app/**/*.scss'], ['sass']);
 });
 
