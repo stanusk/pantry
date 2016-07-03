@@ -1,0 +1,23 @@
+#pantry-stats {
+	h2 {
+		text-align: center;
+
+		select {
+			margin-left: 0.2em;
+			font-size: 0.7em;
+
+			option {
+				font-size: 0.7em;
+			}
+		}
+	}
+
+	table {
+		margin: 2em auto 2.5em;
+		table-layout: fixed;
+
+		th, td {
+			text-align: center;
+		}
+	}
+}

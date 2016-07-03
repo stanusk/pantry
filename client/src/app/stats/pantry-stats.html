@@ -1,1 +1,79 @@
-<pre>STATS</pre>
+
+<div id="pantry-stats">
+	<section id="top-stats" class="row">
+		<h2>
+			Top 10
+			<select ng-model="vm.selectedTop">
+				<option value="items">items</option>
+				<option value="users">users</option>
+			</select>
+		</h2>
+
+		<div class=" col-md-8 col-md-offset-2">
+			<table
+				ng-show="vm.selectedTop == 'items'"
+				class="table table-striped"
+			>
+				<tr>
+					<th>Item</th>
+					<th>Consumed</th>
+				</tr>
+				<tr ng-repeat="item in vm.items | orderBy: '-consumed'">
+					<td>{{item.name}}</td>
+					<td>{{item.consumed}}</td>
+				</tr>
+			</table>
+
+			<table
+				ng-show="vm.selectedTop == 'users'"
+				class="table table-striped"
+			>
+				<tr>
+					<th>User</th>
+					<th>Consumed</th>
+				</tr>
+				<tr ng-repeat="user in vm.usersStats | orderBy: '-consumedTotal'">
+					<td>{{user.name}}</td>
+					<td>{{user.consumedTotal}}</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+
+	<section id="user-stats" class="row">
+		<h2>
+			History of
+			<select
+				ng-model="vm.selectedUser"
+				ng-change="vm.showUserHist(vm.selectedUser._id)"
+				ng-options="user as user.name for user in vm.users | orderBy: 'name'"
+			>
+				<option
+					value=""
+					ng-if="!vm.selectedUser"
+				>
+					- select user -
+				</option>
+			</select>
+		</h2>
+
+		<div class=" col-md-8 col-md-offset-2">
+			<table
+				class="table table-striped"
+			>
+				<tr>
+					<th>Item</th>
+					<th>Consumed</th>
+				</tr>
+				<tr
+					ng-if="vm.selectedUser && vm.selectedUser.history"
+					ng-repeat="item in vm.selectedUser.history | orderBy: '-item.consumed'"
+				>
+					<td>{{item.name}}</td>
+					<td>{{item.consumed}}</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+</div>

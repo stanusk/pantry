@@ -1,12 +1,19 @@
 
 .body-cont {
 	.nav {
+		margin-top:0.5em;
+
 		li {
 			font-size: 1.2em;
 			cursor: pointer;
+
+			a {
+				border-radius: 0;
+			}
 		}
-		a {
-			border-radius: 0;
-		}
+	}
+
+	.dropdown-menu {
+		padding: 0;
 	}
 }
