@@ -1,0 +1,16 @@
+#pantry-admin {
+	input {
+		width: initial;
+		display: inline-block;
+	}
+
+	li {
+		font-size: 1.5em;
+
+		span {
+			position: relative;
+			top: 0.2em;
+			margin-left: 0.5em;
+		}
+	}
+}

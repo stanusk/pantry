@@ -1,8 +1,9 @@
 <form name="pantryList" id="pantryList">
 
 	<section id="welcome">
-		<h2 ng-if="!vm.selected.user">Welcome to Vectary pantry!</h2>
+		<h2 ng-if="!vm.selected.user">Welcome to Vectary pantry</h2>
 		<h2 ng-if="vm.selected.user">Welcome to Vectary pantry, {{vm.selected.user.name}}!</h2>
+		<h3>Choose your treat <span class="glyphicon glyphicon-heart-empty"></span></h3>
 	</section>
 
 	<section id="pantry-selection" class="row">

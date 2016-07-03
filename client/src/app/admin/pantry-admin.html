@@ -1,1 +1,79 @@
-<pre>ADMIN</pre>
+<div id="pantry-admin" class="row">
+	<section class="col-md-6">
+		<h3>
+			Items
+		</h3>
+
+		<div
+			class="add-record"
+			ng-class="{'has-error': vm.invalid.newItem}"
+		>
+			<input
+				ng-model="newItem"
+				ng-change="vm.validate(newItem, 'items')"
+				type="text"
+				class="form-control"
+			>
+			<button
+				ng-click="vm.addItem(newItem)"
+				ng-disabled="!newItem || vm.invalid.newItem"
+				type="button" class="btn btn-success" aria-label="Add item"
+			>
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			</button>
+		</div>
+
+		<ul>
+			<li
+				ng-repeat="item in vm.items"
+			>
+				{{item.name}}
+				<span
+					class="glyphicon glyphicon-remove-circle cursor-pointer text-danger"
+					aria-hidden="true"
+					ng-click="vm.removeItem(item._id)"
+				></span>
+			</li>
+		</ul>
+
+	</section>
+
+	<section class="col-md-6">
+		<h3>
+			Users
+		</h3>
+
+		<div
+			class="add-record"
+			ng-class="{'has-error': vm.invalid.newUser}"
+		>
+			<input
+				ng-model="newUser"
+				ng-change="vm.validate(newUser, 'users')"
+				type="text"
+				class="form-control"
+			>
+			<button
+				ng-click="vm.addUser(newUser)"
+				ng-disabled="!newUser || vm.invalid.newUser"
+				type="button" class="btn btn-success" aria-label="Add item"
+			>
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			</button>
+		</div>
+
+		<ul>
+			<li
+				ng-repeat="user in vm.users"
+			>
+				{{user.name}}
+				<span
+					class="glyphicon glyphicon-remove-circle cursor-pointer text-danger"
+					aria-hidden="true"
+					ng-click="vm.removeUser(user._id)"
+				></span>
+			</li>
+		</ul>
+
+	</section>
+</div>

@@ -12,28 +12,54 @@
 		this.getTopUsersStats = getTopUsersStats;
 		this.getUserHistory = getUserHistory;
 		
+		this.addItem = addItem;
+		this.removeItem = removeItem;
+		this.addUser = addUser;
+		this.removeUser = removeUser;
+		
 		function getItems () {
+			// todo: BE
 			return mockItems;
 		}
 		
 		function getUsers () {
+			// todo: BE
 			return mockUsers;
 		}
 		
 		function saveSelection (userId, itemId) {
-			return mockUsers;
+			// todo: BE
 		}
 		
 		function getTopItemsStats () {
+			// todo: BE
 			return mockTopItems;
 		}
 		
 		function getTopUsersStats () {
+			// todo: BE
 			return mockTopUsers;
 		}
 		
 		function getUserHistory (userId) {
+			// todo: BE
 			return mockUserHist[userId];
+		}
+		
+		function addItem (itemName) {
+			// todo: BE
+		}
+		
+		function removeItem (itemId) {
+			// todo: BE
+		}
+		
+		function addUser (userName) {
+			// todo: BE
+		}
+		
+		function removeUser (userId) {
+			// todo: BE
 		}
 	}
 	

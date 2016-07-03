@@ -1,13 +1,20 @@
 #welcome {
 	margin-top: 1.5em;
 
-	h2 {
+	h2, h3 {
 		text-align: center;
+
+		span {
+			position: relative;
+			top: 0.2em;
+			color: red;
+			opacity: 0.7;
+		}
 	}
 }
 
 #pantry-selection {
-	margin-top: 1.5em;
+	margin-top: 3em;
 
 	ul {
 		list-style: none;

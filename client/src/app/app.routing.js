@@ -48,7 +48,17 @@
 					url: '/admin',
 					templateUrl: 'app/admin/pantry-admin.html',
 					controller: 'pantryAdminCtrl',
-					controllerAs: 'vm'
+					controllerAs: 'vm',
+					resolve: {
+						items: function (app) {
+							// TODO: redo for async use once BE done
+							return app.getItems();
+						},
+						users: function (app) {
+							// TODO: redo for async use once BE done
+							return app.getUsers();
+						}
+					}
 				}
 			)
 		;

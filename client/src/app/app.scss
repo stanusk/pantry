@@ -5,7 +5,6 @@
 
 		li {
 			font-size: 1.2em;
-			cursor: pointer;
 
 			a {
 				border-radius: 0;
@@ -16,4 +15,8 @@
 	.dropdown-menu {
 		padding: 0;
 	}
+}
+
+.cursor-pointer {
+	cursor: pointer;
 }
