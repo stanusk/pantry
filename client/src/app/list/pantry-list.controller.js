@@ -4,11 +4,11 @@
 		.controller('pantryListCtrl', PantryListCtrl)
 	;
 	
-	function PantryListCtrl (items, users, app) {
+	function PantryListCtrl ($scope, app) {
 		var vm = this;
 	
-		vm.items = items;
-		vm.users = users;
+		vm.items = $scope.items;
+		vm.users = $scope.users;
 		vm.selected = {};
 
 		vm.submit = submit;

@@ -4,11 +4,11 @@
 		.controller('pantryStatsCtrl', PantryStatsCtrl)
 	;
 	
-	function PantryStatsCtrl (app) {
+	function PantryStatsCtrl ($scope, app) {
 		var vm = this;
 
 		vm.selectedTop = 'items';
-		vm.users = app.getUsers();
+		vm.users = $scope.users;
 		vm.items = app.getTopItemsStats();
 		vm.usersStats = app.getTopUsersStats();
 

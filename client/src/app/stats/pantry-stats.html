@@ -3,7 +3,7 @@
 	<section id="top-stats" class="row">
 		<h2>
 			Top 10
-			<select ng-model="vm.selectedTop">
+			<select ng-model="vm.selectedTop" class="cursor-pointer">
 				<option value="items">items</option>
 				<option value="users">users</option>
 			</select>
@@ -45,6 +45,7 @@
 		<h2>
 			History of
 			<select
+				class="cursor-pointer"
 				ng-model="vm.selectedUser"
 				ng-change="vm.showUserHist(vm.selectedUser._id)"
 				ng-options="user as user.name for user in vm.users | orderBy: 'name'"

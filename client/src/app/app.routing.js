@@ -11,16 +11,7 @@
 				{
 					abstract: true,
 					url: '/pantry',
-					templateUrl: 'app/app.html'
-				}
-			)
-			.state(
-				'pantry.list',
-				{
-					url: '/list',
-					templateUrl: 'app/list/pantry-list.html',
-					controller: 'pantryListCtrl',
-					controllerAs: 'vm',
+					templateUrl: 'app/app.html',
 					resolve: {
 						items: function (app) {
 							// TODO: redo for async use once BE done
@@ -30,7 +21,20 @@
 							// TODO: redo for async use once BE done
 							return app.getUsers();
 						}
+					},
+					controller: function ($scope, items, users) {
+						$scope.items = items;
+						$scope.users = users;
 					}
+				}
+			)
+			.state(
+				'pantry.list',
+				{
+					url: '/list',
+					templateUrl: 'app/list/pantry-list.html',
+					controller: 'pantryListCtrl',
+					controllerAs: 'vm'
 				}
 			)
 			.state(
@@ -48,17 +52,7 @@
 					url: '/admin',
 					templateUrl: 'app/admin/pantry-admin.html',
 					controller: 'pantryAdminCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						items: function (app) {
-							// TODO: redo for async use once BE done
-							return app.getItems();
-						},
-						users: function (app) {
-							// TODO: redo for async use once BE done
-							return app.getUsers();
-						}
-					}
+					controllerAs: 'vm'
 				}
 			)
 		;

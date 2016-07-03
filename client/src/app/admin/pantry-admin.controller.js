@@ -4,7 +4,7 @@
 		.controller('pantryAdminCtrl', PantryAdminCtrl)
 	;
 	
-	function PantryAdminCtrl ($scope, app, items, users) {
+	function PantryAdminCtrl ($scope, app) {
 		var vm = this;
 		
 		vm.addItem = addItem;
@@ -13,8 +13,8 @@
 		vm.removeUser = removeUser;
 		vm.validate = validate;
 
-		vm.items = items;
-		vm.users = users;
+		vm.items = $scope.items;
+		vm.users = $scope.users;
 		
 		vm.invalid = {
 			newItem: false,
