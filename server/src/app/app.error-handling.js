@@ -50,7 +50,6 @@
 	
 		var errMsg = {
 			status: status,
-			name: name,
 			detail: detail,
 			stack: err.stack || err.err && err.err.stack,
 			error: err
