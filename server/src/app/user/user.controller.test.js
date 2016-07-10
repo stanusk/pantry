@@ -20,7 +20,7 @@
 				.end(function (err, res) {
 					expect(err).to.be.null;
 					expect(res.body.data.username).to.equal(userName);
-					expect(res.body.data).to.include.keys('_id');
+					expect(res.body.data).to.have.ownProperty('_id');
 
 					user = res.body.data;
 
@@ -34,7 +34,8 @@
 				.expect(200)
 				.end(function (err, res) {
 					expect(err).to.be.null;
-					expect(res.body.data).to.to.be.an('array');
+					expect(res.body.data).to.be.an('array');
+					expect(res.body.data).to.have.length.above(0);
 					expect(res.body.data).to.include(user);
 
 					done();

@@ -4,22 +4,27 @@
 	var Schema = mongoose.Schema;
 
 	/**
-	 * User schema definition
+	 * Item schema definition
 	 */
 	var userSchema = new Schema({
-		username: {
+		name: {
 			type: String,
 			trim: true,
 			unique: true,
 			required: true
 		},
+		history: [{
+			_id: false,
+			userId: String,
+			count: Number
+		}],
 		createdAt: {
 			type: Date,
 			default: Date.now
 		}
 	});
 	
-	var User = mongoose.model('User', userSchema);
+	var Item = mongoose.model('Item', userSchema);
 	
-	module.exports = User;
+	module.exports = Item;
 })();
