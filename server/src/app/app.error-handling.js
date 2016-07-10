@@ -55,7 +55,7 @@
 			error: err
 		};
 	
-		utils.sendJSONresponse(res, status, errMsg, reqUrl);
+		utils.sendJsonResponse(res, status, errMsg, reqUrl);
 	}
 
 	function prod (utils, err, req, res, next) {
@@ -70,7 +70,7 @@
 			error: {}
 		};
 
-		utils.sendJSONresponse(res, status, errMsg);
+		utils.sendJsonResponse(res, status, errMsg);
 	}
 
 })();

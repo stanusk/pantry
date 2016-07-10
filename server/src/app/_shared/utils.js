@@ -3,12 +3,12 @@
 	'use strict';
 
 	var utils = {
-		sendJSONresponse: sendJSONresponse
+		sendJsonResponse: sendJsonResponse
 	};
 
 	module.exports = utils;
 
-	function sendJSONresponse(res, status, content, url) {
+	function sendJsonResponse(res, status, content, url) {
 		var response = {};
 
 		// structure response

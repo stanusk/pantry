@@ -36,7 +36,7 @@
 			if (!newUser)
 				return next({message: 'User not created', status: 400});
 			
-			utils.sendJSONresponse(res, 201, newUser);
+			utils.sendJsonResponse(res, 201, newUser);
 		});
 	}
 
@@ -48,7 +48,7 @@
 			if (err)
 				return next({err: err, status: 400});
 			
-			utils.sendJSONresponse(res, 200, users || []);
+			utils.sendJsonResponse(res, 200, users || []);
 		});
 	}
 
@@ -64,7 +64,7 @@
 			if (!deletedUser)
 				return next({message: 'User not found', status: 400});
 
-			utils.sendJSONresponse(res, 200, deletedUser);
+			utils.sendJsonResponse(res, 200, deletedUser);
 		});
 	}
 	
