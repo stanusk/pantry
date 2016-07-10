@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --debug index.js"
+    "start": "nodemon --debug index.js",
+    "startTest": "NODE_ENV=test PORT=5555 nodemon index.js"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
@@ -13,7 +14,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
+    "supertest": "^1.2.0"
   }
 }
-

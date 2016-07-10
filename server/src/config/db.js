@@ -5,11 +5,11 @@
 	var mongoose = require('mongoose');
 	var config = require('./config.js');
 
-	// default je lokalny vyvoj
+	// local dev by default
 	var ENV = 'development';
 	
-	if (process.env.NODE_ENV == 'production')
-		ENV = 'production';
+	if (process.env.NODE_ENV && process.env.NODE_ENV != ENV)
+		ENV = process.env.NODE_ENV;
 	
 	var dbURI = config.db[ENV].url;
 

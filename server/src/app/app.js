@@ -7,7 +7,6 @@
 	============================*/
 	var express = require('express');
 	var config = require('../config/config.js');
-	var path = require('path');
 	var errorHandling = require('./app.error-handling.js');
 
 	/*=============================

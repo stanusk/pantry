@@ -11,12 +11,16 @@
 
 	var settings = {
 		db: {
-			// lokalny vyvoj
+			// local dev db
 			development: {
 				url: 'mongodb://localhost/pantrydev'
 			},
+			// local test db
+			test: {
+				url: 'mongodb://localhost/pantrytest'
+			},
 			// TODO: 
-			// PRODUKCNA verzia
+			// prod db
 			production: {
  				 url: ''
 			}
