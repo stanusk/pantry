@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon --debug index.js",
-    "startTest": "NODE_ENV=test PORT=5555 nodemon index.js"
+    "startTest": "NODE_ENV=test PORT=5555 nodemon index.js",
+    "runTest": "mocha ./src/**/*.test.js"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
