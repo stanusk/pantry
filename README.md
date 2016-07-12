@@ -37,14 +37,14 @@ Bonus user stories:
 
 ## To run on localhost
 
-1. client folder (`cd client/`)
-- `bower install`
-- `npm install`
-- `gulp`
+ 1. client folder (`cd client/`)
+    - `bower install`
+    - `npm install`
+    - `gulp`
 
-2. server folder (`cd server/`)
-- `npm install`
-- `npm start`
+ 2. server folder (`cd server/`)
+    - `npm install`
+    - `npm start`
 
 # License
 
