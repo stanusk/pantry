@@ -21,10 +21,6 @@ Bonus user stories:
     - As a user, I want to be able to add new user
     - As a user, I want to be able to delete a user
 
-
-# =============================================================
-
-
 # RUN
 
 ## Prerequisites
@@ -50,8 +46,6 @@ Bonus user stories:
 - `npm install`
 - `npm start`
 
-# =============================================================
-
-## License
+# License
 
 MIT
