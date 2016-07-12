@@ -22,53 +22,71 @@
 		};
 
 		function addItem (itemName) {
-			app.addItem(itemName);
-			
-			// todo: then
-			var item = {
-				_id: 'xxx',
-				name: itemName
-			};
-			vm.items.push(item);
-			reset('newItem');
-			
-			// todo: add error handler (bg duplicity check)
+			app.addItem(itemName).then(
+				function (res) {
+					var created = res.data.data;
+					var item = {
+						_id: created._id,
+						name: created.name
+					};
+					vm.items.push(item);
+					resetInput('newItem');
+				},
+				function (err) {
+					console.log(err);
+				}
+			);
+
+			// todo: add error handler modal (BE duplicity check)
 		}
 
 		function removeItem (itemId) {
-			app.removeItem(itemId);
+			app.removeItem(itemId).then(
+				function (res) {
+					vm.items.forEach(function (item, index) {
+						if (res.data.data._id == item._id) {
+							vm.items.splice(index, 1);
+						}
+					});
+				},
+				function (err) {
 
-			// todo: then
-			vm.items.forEach(function (item, index) {
-				if (itemId == item._id) {
-					vm.items.splice(index, 1);
 				}
-			});
+			);
 		}
 		
 		function addUser (userName) {
-			app.addUser(userName);
+			app.addUser(userName).then(
+				function (res) {
+					var created = res.data.data;
+					var user = {
+						_id: created._id,
+						name: created.name
+					};
+					vm.users.push(user);
+					resetInput('newUser');
+				},
+				function (err) {
+
+				}
+			);
 			
-			// todo: then
-			var user = {
-				_id: 'xxx',
-				name: userName
-			};
-			vm.users.push(user);
-			reset('newUser');
-			
-			// todo: add error handler (bg duplicity check)
+			// todo: add error handler modal (BE duplicity check)
 		}
 		
 		function removeUser (userId) {
-			app.removeUser(userId);
-			
-			// todo: then
-			vm.users.forEach(function (user, index) {
-				if (userId == user._id) {
-					vm.users.splice(index, 1);
+			app.removeUser(userId).then(
+				function (res) {
+					vm.users.forEach(function (user, index) {
+						if (res.data.data._id == user._id) {
+							vm.users.splice(index, 1);
+						}
+					});
+				},
+				function (err) {
+
 				}
-			});
+			);
 		}
 		
 		function validate (name, type) {
@@ -88,7 +106,7 @@
 		////////////////////////////////////////////////
 		// helpers
 		
-		function reset (inputType) {
+		function resetInput (inputType) {
 			if ($scope[inputType])
 				$scope[inputType] = null;
 		}

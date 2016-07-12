@@ -18,7 +18,7 @@
 					<th>Item</th>
 					<th>Consumed in total</th>
 				</tr>
-				<tr ng-repeat="item in vm.items | orderBy: '-consumed'">
+				<tr ng-repeat="item in vm.itemsStats | orderBy: '-consumed'">
 					<td>{{item.name}}</td>
 					<td>{{item.consumed}}</td>
 				</tr>
@@ -32,9 +32,9 @@
 					<th>User</th>
 					<th>Consumed items</th>
 				</tr>
-				<tr ng-repeat="user in vm.usersStats | orderBy: '-consumedTotal'">
+				<tr ng-repeat="user in vm.usersStats | orderBy: '-consumed'">
 					<td>{{user.name}}</td>
-					<td>{{user.consumedTotal}}</td>
+					<td>{{user.consumed}}</td>
 				</tr>
 			</table>
 		</div>

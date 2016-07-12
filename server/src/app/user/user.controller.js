@@ -26,7 +26,7 @@
 		var params = req.body;
 		
 		var user = new User({
-			username: params.username
+			name: params.name
 		});
 		
 		user.save(function (err, newUser) {
@@ -56,7 +56,7 @@
 	 * Delete user
 	 */
 	function deleteUser (req, res, next) {
-		var params = req.body;
+		var params = req.params;
 		User.findOneAndRemove({_id: ObjectId(params.userId)}, function (err, deletedUser) {
 			if (err)
 				return next({err: err, status: 400});

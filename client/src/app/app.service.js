@@ -3,7 +3,7 @@
 	angular.module('pantry')
 		.service('app', AppService);
 	
-	function AppService () {
+	function AppService ($http) {
 		this.getItems = getItems;
 		this.getUsers = getUsers;
 		this.saveSelection = saveSelection;
@@ -17,49 +17,46 @@
 		this.addUser = addUser;
 		this.removeUser = removeUser;
 		
+		var apiLink = PANTRY.config.apiLink;
+		
 		function getItems () {
-			// todo: BE
-			return mockItems;
+			return $http.get(apiLink + 'items/list');
 		}
 		
 		function getUsers () {
-			// todo: BE
-			return mockUsers;
+			return $http.get(apiLink + 'users');
 		}
 		
 		function saveSelection (userId, itemId) {
-			// todo: BE
+			return $http.put(apiLink + 'items/' + itemId + '/users/' + userId);
 		}
 		
 		function getTopItemsStats () {
-			// todo: BE
-			return mockTopItems;
+			return $http.get(apiLink + 'stats/items/top/10');
 		}
 		
 		function getTopUsersStats () {
-			// todo: BE
-			return mockTopUsers;
+			return $http.get(apiLink + 'stats/users/top/10');
 		}
 		
 		function getUserHistory (userId) {
-			// todo: BE
-			return mockUserHist[userId];
+			return $http.get(apiLink + 'stats/users/' + userId);
 		}
 		
 		function addItem (itemName) {
-			// todo: BE
+			return $http.post(apiLink + 'items', {name: itemName})
 		}
 		
 		function removeItem (itemId) {
-			// todo: BE
+			return $http.delete(apiLink + 'items/' + itemId)
 		}
 		
 		function addUser (userName) {
-			// todo: BE
+			return $http.post(apiLink + 'users', {name: userName})
 		}
 		
 		function removeUser (userId) {
-			// todo: BE
+			return $http.delete(apiLink + 'users/' + userId)
 		}
 	}
 	

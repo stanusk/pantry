@@ -18,6 +18,7 @@
 	=            Middleware            =
 	==================================*/
 	var bodyParser = require('body-parser');
+	var cors = require('cors');
 
 	/*==========================
 	=            DB            =
@@ -40,6 +41,7 @@
 	app.use(bodyParser.json());
 	app.use(bodyParser.text());
 	app.use(bodyParser.urlencoded({ extended: false }));
+	app.use(cors());
 
 	/**
 	 * Content-type json type check

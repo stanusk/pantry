@@ -1,0 +1,12 @@
+{ 
+    "_id" : ObjectId("5784b989116b2218474a6c1b"), 
+    "name" : "Dugo", 
+    "createdAt" : ISODate("2016-07-12T09:34:01.720+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5784b999116b2218474a6c1c"), 
+    "name" : "Duňa", 
+    "createdAt" : ISODate("2016-07-12T09:34:17.488+0000"), 
+    "__v" : NumberInt(0)
+}

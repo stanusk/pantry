@@ -14,9 +14,16 @@
 		vm.submit = submit;
 
 		function submit (selected) {
-			app.saveSelection(selected.user._id, selected.item._id);
-			// TODO: then
-			selected.item = null;
+			app.saveSelection(selected.user._id, selected.item._id).then(
+				function (res) {
+					selected.item = null;
+				},
+				function (err) {
+				    console.log(err);
+				}
+			);
+			
+			
 		}
 	}
 })();

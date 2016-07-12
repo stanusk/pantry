@@ -3,11 +3,13 @@
 	'use strict';
 
 	var utils = {
-		sendJsonResponse: sendJsonResponse
+		sendJsonResponse: sendJsonResponse,
+		isEmptyObj: isEmptyObj
 	};
 
 	module.exports = utils;
 
+	// TODO: refactor not to send "res.data.data" to FE
 	function sendJsonResponse(res, status, content, url) {
 		var response = {};
 
@@ -26,6 +28,10 @@
 		}
 
 		res.status(status).json(response);
+	}
+
+	function isEmptyObj (obj) {
+		return !Object.keys(obj).length;
 	}
 
 })();

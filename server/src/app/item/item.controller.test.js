@@ -87,8 +87,8 @@
 		});
 
 		it('should delete an item', function (done) {
-			api.delete('/items')
-				.send({itemId: item._id})
+			api.delete('/items/' + item._id)
+				.set('Content-Type', 'application/json')
 				.expect(200)
 				.end(function (err, res) {
 					expect(err).to.be.null;

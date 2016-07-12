@@ -9,20 +9,50 @@
 
 		vm.selectedTop = 'items';
 		vm.users = $scope.users;
-		vm.items = app.getTopItemsStats();
-		vm.usersStats = app.getTopUsersStats();
 
 		vm.showUserHist = showUserHist;
 		vm.userHistoryList = [];
 
+		init();
+
+		function init () {
+			loadItemsStats();
+			loadUsersStats();
+		}
+
+		function loadItemsStats () {
+			app.getTopItemsStats().then(
+				function (res) {
+				    vm.itemsStats = res.data.data;
+				},
+				function (err) {
+				    console.log(err);
+				}
+			);
+		}
+
+		function loadUsersStats () {
+			app.getTopUsersStats().then(
+				function (res) {
+					vm.usersStats = res.data.data;
+				},
+				function (err) {
+					console.log(err);
+				}
+			);
+		}
+
 		function showUserHist (userId) {
 			if (!userId)
 				return;
-			
-			// TODO: redo for async use once BE done
-			var userHist = app.getUserHistory(userId);
+			app.getUserHistory(userId).then(
+				function (res) {
+					vm.selectedUser.history = res.data.data;
+				},
+				function (err) {
 
-			vm.selectedUser.history = userHist.consumedItems;
+				}
+			);
 		}
 	}
 })();

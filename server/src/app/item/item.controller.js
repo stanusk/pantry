@@ -70,7 +70,7 @@
 	 * Delete item
 	 */
 	function deleteItem (req, res, next) {
-		var params = req.body;
+		var params = req.params;
 		Item.findOneAndRemove({_id: ObjectId(params.itemId)}, function (err, deletedItem) {
 			if (err)
 				return next({err: err, status: 400});

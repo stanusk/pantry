@@ -17,14 +17,14 @@
 	 * Users
 	 */
 	router.post('/users', usersCtrl.createUser);
-	router.delete('/users', usersCtrl.deleteUser);
+	router.delete('/users/:userId', usersCtrl.deleteUser);
 	router.get('/users', usersCtrl.getUsers);
 
 	/**
 	 * Items
 	 */
 	router.post('/items', itemsCtrl.createItem);
-	router.delete('/items', itemsCtrl.deleteItem);
+	router.delete('/items/:itemId', itemsCtrl.deleteItem);
 	router.get('/items', itemsCtrl.getItems);
 	router.get('/items/list', itemsCtrl.getItemsList);
 

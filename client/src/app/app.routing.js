@@ -14,12 +14,24 @@
 					templateUrl: 'app/app.html',
 					resolve: {
 						items: function (app) {
-							// TODO: redo for async use once BE done
-							return app.getItems();
+							return app.getItems().then(
+								function (res) {
+									return res.data.data;
+								},
+								function (err) {
+									console.log(err);
+								}
+							);
 						},
 						users: function (app) {
-							// TODO: redo for async use once BE done
-							return app.getUsers();
+							return app.getUsers().then(
+								function (res) {
+									return res.data.data;
+								},
+								function (err) {
+									console.log(err);
+								}
+							);
 						}
 					},
 					controller: function ($scope, items, users) {

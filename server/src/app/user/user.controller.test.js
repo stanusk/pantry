@@ -7,19 +7,19 @@
 	
 	describe('user.controller', function () {
 
-		var userName = 'user-' + Math.random().toString(36).substr(2, 5);
+		var name = 'user-' + Math.random().toString(36).substr(2, 5);
 		var user;
 
 		it('should create new user', function (done) {
 
 			api.post('/users')
 				.send({
-					username: userName
+					name: name
 				})
 				.expect(201)
 				.end(function (err, res) {
 					expect(err).to.be.null;
-					expect(res.body.data.username).to.equal(userName);
+					expect(res.body.data.name).to.equal(name);
 					expect(res.body.data).to.have.ownProperty('_id');
 
 					user = res.body.data;
@@ -44,8 +44,8 @@
 		});
 
 		it('should delete a user', function (done) {
-			api.delete('/users')
-				.send({userId: user._id})
+			api.delete('/users/' + user._id)
+				.set('Content-Type', 'application/json')
 				.expect(200)
 				.end(function (err, res) {
 					expect(err).to.be.null;

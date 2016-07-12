@@ -10,6 +10,8 @@
 	};
 
 	module.exports = errorHandling;
+	
+	var utils = require('./_shared/utils');
 
 	// on javascript exception, print out nice stack
 	process.on('uncaughtException', function(err) {
@@ -24,7 +26,7 @@
 		var reqContentTypeIsJson = contentType && contentType.includes('application/json'); //es6
 
 		// force content/type to be 'application/json'
-		if (req.method != 'GET' && !reqContentTypeIsJson)
+		if (!utils.isEmptyObj(req.body) && !reqContentTypeIsJson)
 		// 415 - Unsupported Media Type
 			return next({
 				message: 'Content-Type should be set to "application/json"!',

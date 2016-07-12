@@ -7,7 +7,7 @@
 	 * User schema definition
 	 */
 	var userSchema = new Schema({
-		username: {
+		name: {
 			type: String,
 			trim: true,
 			unique: true,

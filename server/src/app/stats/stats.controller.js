@@ -33,8 +33,8 @@
 					_id: {_id: '$_id', name: '$name'},
 					count: {$sum: '$history.count'}
 				}},
-				{$project: {_id: '$_id._id', name: '$_id.name', count: '$count'}},
-				{$sort: {count: -1, name: 1}}
+				{$project: {_id: '$_id._id', name: '$_id.name', consumed: '$count'}},
+				{$sort: {consumed: -1, name: 1}}
 			],
 			function (err, userItems) {
 				if (err)
@@ -60,7 +60,7 @@
 					_id: {_id: '$_id', name: '$name'},
 					count: {$sum: '$history.count'}
 				}},
-				{$project: {_id: '$_id._id', name: '$_id.name', count: '$count'}},
+				{$project: {_id: '$_id._id', name: '$_id.name', consumed: '$count'}},
 				{$sort: {count: -1, name: 1}},
 				{$limit: limit}
 			],
@@ -102,7 +102,8 @@
 
 				var userIds = extractFromObjects(topUsersStats, 'userId');
 
-				User.find({_id: {$in: userIds}}, '_id username')
+				User.find({_id: {$in: userIds}}, '_id name')
+					.lean()
 					.exec(function (err, users) {
 						if (err)
 							return next({err: err, status: 400});
@@ -115,8 +116,9 @@
 								return stats.userId == user._id;
 							})[0];
 
-							user.count = userStats.count;
+							user.consumed = userStats.count;
 						});
+
 						utils.sendJsonResponse(res, 200, users);
 					})
 				;

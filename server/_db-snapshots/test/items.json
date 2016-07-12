@@ -1,0 +1,28 @@
+{ 
+    "_id" : ObjectId("5784b9b1116b2218474a6c1d"), 
+    "name" : "Milka Tender", 
+    "createdAt" : ISODate("2016-07-12T09:34:41.407+0000"), 
+    "history" : [
+        {
+            "userId" : "5784b989116b2218474a6c1b", 
+            "count" : NumberInt(3)
+        }, 
+        {
+            "userId" : "5784b999116b2218474a6c1c", 
+            "count" : NumberInt(1)
+        }
+    ], 
+    "__v" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("5784b9b9116b2218474a6c1e"), 
+    "name" : "Pistachios", 
+    "createdAt" : ISODate("2016-07-12T09:34:49.723+0000"), 
+    "history" : [
+        {
+            "userId" : "5784b999116b2218474a6c1c", 
+            "count" : NumberInt(1)
+        }
+    ], 
+    "__v" : NumberInt(1)
+}
