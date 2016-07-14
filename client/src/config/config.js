@@ -27,10 +27,9 @@
 			development: {
 				url: 'http://localhost:5000/api/v1/'
 			},
-			// TODO: add prod link once ready for deploy
 			// production
 			production: {
-				url: ''
+				url: 'api/v1/'
 			}
 		};
 

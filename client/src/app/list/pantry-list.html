@@ -1,8 +1,8 @@
 <form name="pantryList" id="pantryList">
 
 	<section id="welcome">
-		<h2 ng-if="!vm.selected.user">Welcome to Vectary pantry</h2>
-		<h2 ng-if="vm.selected.user">Welcome to Vectary pantry, {{vm.selected.user.name}}!</h2>
+		<h2 ng-if="!vm.selected.user">Welcome to our pantry</h2>
+		<h2 ng-if="vm.selected.user">Welcome to our pantry, {{vm.selected.user.name}}!</h2>
 		<h3>Choose your treat <span class="glyphicon glyphicon-heart-empty"></span></h3>
 	</section>
 
@@ -34,7 +34,7 @@
 			type="button"
 			class="btn btn-user"
 		>
-			<span ng-if="!vm.selected.user">Chose your name to submit</span>
+			<span ng-if="!vm.selected.user">Choose your name to submit</span>
 			<span ng-if="vm.selected.user">Submit as:
 				<strong>{{vm.selected.user.name}}</strong></span>
 		</button>

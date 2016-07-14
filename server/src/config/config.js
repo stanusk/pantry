@@ -19,15 +19,13 @@
 			test: {
 				url: 'mongodb://localhost/pantrytest'
 			},
-			// TODO: 
 			// prod db
 			production: {
- 				 url: ''
+ 				 url: 'mongodb://localhost/pantryprod'
 			}
 		},
 		root: root,
-		apiRoute: '/api/v1/',
-		secret: 'mySuperTopSecret2016word:)'
+		apiRoute: '/api/v1/'
 	};
 
 	module.exports = settings;
