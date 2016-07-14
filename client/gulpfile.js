@@ -268,7 +268,7 @@ gulp.task('build:size', function() {
 // this default task will run BrowserSync & then use Gulp to watch files.
 // when a file is changed, an event is emitted to BrowserSync with the filepath.
 gulp.task('default', ['bower', 'copyApp', 'copyConfig',
-  'copyIndex', 'copyVendor', 'copyJs', 'browser-sync', 'fonts', 'images', 'sass'], function() {
+  'copyIndex', 'copyVendor', 'copyJs', 'browser-sync', 'fonts', 'templates', 'images', 'sass'], function() {
   gulp.watch('./_build/shared/styles/*.css', function(file) {
     if (file.type === "changed") {
       reload(file.path);
