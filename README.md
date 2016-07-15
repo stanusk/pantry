@@ -21,6 +21,8 @@ Bonus user stories:
     - As a user, I want to be able to add new user
     - As a user, I want to be able to delete a user
 
+Live showcase version cen be found [here](pantry.neviem.me).
+
 # RUN
 
 ## Prerequisites
