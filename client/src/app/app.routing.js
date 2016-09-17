@@ -14,24 +14,10 @@
 					templateUrl: 'app/app.html',
 					resolve: {
 						items: function (app) {
-							return app.getItems().then(
-								function (res) {
-									return res.data.data;
-								},
-								function (err) {
-									console.log(err);
-								}
-							);
+							return app.getItems();
 						},
 						users: function (app) {
-							return app.getUsers().then(
-								function (res) {
-									return res.data.data;
-								},
-								function (err) {
-									console.log(err);
-								}
-							);
+							return app.getUsers();
 						}
 					},
 					controller: function ($scope, items, users) {

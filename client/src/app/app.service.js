@@ -3,7 +3,7 @@
 	angular.module('pantry')
 		.service('app', AppService);
 	
-	function AppService ($http) {
+	function AppService ($http, _helpers) {
 		this.getItems = getItems;
 		this.getUsers = getUsers;
 		this.saveSelection = saveSelection;
@@ -20,137 +20,44 @@
 		var apiLink = PANTRY.config.apiLink;
 		
 		function getItems () {
-			return $http.get(apiLink + 'items/list');
+			return $http.get(apiLink + 'items/list').then(_helpers.extractRes);
 		}
 		
 		function getUsers () {
-			return $http.get(apiLink + 'users');
+			return $http.get(apiLink + 'users').then(_helpers.extractRes);
 		}
 		
 		function saveSelection (userId, itemId) {
-			return $http.put(apiLink + 'items/' + itemId + '/users/' + userId);
+			return $http.put(apiLink + 'items/' + itemId + '/users/' + userId).then(_helpers.extractRes);
 		}
 		
 		function getTopItemsStats () {
-			return $http.get(apiLink + 'stats/items/top/10');
+			return $http.get(apiLink + 'stats/items/top/10').then(_helpers.extractRes);
 		}
 		
 		function getTopUsersStats () {
-			return $http.get(apiLink + 'stats/users/top/10');
+			return $http.get(apiLink + 'stats/users/top/10').then(_helpers.extractRes);
 		}
 		
 		function getUserHistory (userId) {
-			return $http.get(apiLink + 'stats/users/' + userId);
+			return $http.get(apiLink + 'stats/users/' + userId).then(_helpers.extractRes);
 		}
 		
 		function addItem (itemName) {
-			return $http.post(apiLink + 'items', {name: itemName})
+			return $http.post(apiLink + 'items', {name: itemName}).then(_helpers.extractRes);
 		}
 		
 		function removeItem (itemId) {
-			return $http.delete(apiLink + 'items/' + itemId)
+			return $http.delete(apiLink + 'items/' + itemId).then(_helpers.extractRes);
 		}
 		
 		function addUser (userName) {
-			return $http.post(apiLink + 'users', {name: userName})
+			return $http.post(apiLink + 'users', {name: userName}).then(_helpers.extractRes);
 		}
 		
 		function removeUser (userId) {
-			return $http.delete(apiLink + 'users/' + userId)
+			return $http.delete(apiLink + 'users/' + userId).then(_helpers.extractRes);
 		}
 	}
 	
-	var mockItems = [
-		{
-			_id: 1,
-			name: 'milka tender',
-			//history: [
-			//	{
-			//		userId: 1,
-			//		count: 3
-			//	},
-			//	{
-			//		userId: 2,
-			//		count: 1
-			//	},
-			//]
-		},
-		{
-			_id: 2,
-			name: 'pistachios',
-			//history: [
-			//	{
-			//		userId: 1,
-			//		count: 1
-			//	}
-			//]
-		}
-
-	];
-	
-	var mockTopItems = [
-		{
-			_id: 1,
-			name: 'milka tender',
-			consumed: 8
-		},
-		{
-			_id: 2,
-			name: 'pistachios',
-			consumed: 1
-		}
-
-	];
-	
-	var mockUsers = [
-		{
-			_id: 1,
-			name: 'Doro'
-		},
-		{
-			_id: 2,
-			name: 'Duňa'
-		}
-	];
-	
-	var mockTopUsers = [
-		{
-			_id: 1,
-			name: 'Doro',
-			consumedTotal: 3
-		},
-		{
-			_id: 2,
-			name: 'Duňa',
-			consumedTotal: 6
-		}
-	];
-	
-	var mockUserHist = {
-		1: {
-			userId: 1,
-			consumedItems: [
-				{
-					itemId: 1,
-					name: 'milka tender',
-					consumed: 2
-				},
-				{
-					itemId: 2,
-					name: 'pistachios',
-					consumed: 1
-				}
-			]
-		},
-		2 : {
-			userId: 2,
-			consumedItems: [
-				{
-					itemId: 1,
-					name: 'milka tender',
-					consumed: 6
-				}
-			]
-		}
-	}
 })();

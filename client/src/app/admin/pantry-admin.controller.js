@@ -23,11 +23,10 @@
 
 		function addItem (itemName) {
 			app.addItem(itemName).then(
-				function (res) {
-					var created = res.data.data;
+				function (createdItem) {
 					var item = {
-						_id: created._id,
-						name: created.name
+						_id: createdItem._id,
+						name: createdItem.name
 					};
 					vm.items.push(item);
 					resetInput('newItem');
@@ -42,9 +41,9 @@
 
 		function removeItem (itemId) {
 			app.removeItem(itemId).then(
-				function (res) {
+				function (removedItem) {
 					vm.items.forEach(function (item, index) {
-						if (res.data.data._id == item._id) {
+						if (removedItem._id == item._id) {
 							vm.items.splice(index, 1);
 						}
 					});
@@ -57,11 +56,10 @@
 		
 		function addUser (userName) {
 			app.addUser(userName).then(
-				function (res) {
-					var created = res.data.data;
+				function (createdUser) {
 					var user = {
-						_id: created._id,
-						name: created.name
+						_id: createdUser._id,
+						name: createdUser.name
 					};
 					vm.users.push(user);
 					resetInput('newUser');
@@ -76,9 +74,9 @@
 		
 		function removeUser (userId) {
 			app.removeUser(userId).then(
-				function (res) {
+				function (removedUser) {
 					vm.users.forEach(function (user, index) {
-						if (res.data.data._id == user._id) {
+						if (removedUser._id == user._id) {
 							vm.users.splice(index, 1);
 						}
 					});

@@ -22,8 +22,8 @@
 
 		function loadItemsStats () {
 			app.getTopItemsStats().then(
-				function (res) {
-				    vm.itemsStats = res.data.data;
+				function (itemStats) {
+				    vm.itemsStats = itemStats;
 				},
 				function (err) {
 				    console.log(err);
@@ -33,8 +33,8 @@
 
 		function loadUsersStats () {
 			app.getTopUsersStats().then(
-				function (res) {
-					vm.usersStats = res.data.data;
+				function (userStats) {
+					vm.usersStats = userStats;
 				},
 				function (err) {
 					console.log(err);
@@ -46,8 +46,8 @@
 			if (!userId)
 				return;
 			app.getUserHistory(userId).then(
-				function (res) {
-					vm.selectedUser.history = res.data.data;
+				function (userHistory) {
+					vm.selectedUser.history = userHistory;
 				},
 				function (err) {
 
