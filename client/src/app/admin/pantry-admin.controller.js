@@ -30,9 +30,6 @@
 					};
 					vm.items.push(item);
 					resetInput('newItem');
-				},
-				function (err) {
-					console.log(err);
 				}
 			);
 
@@ -47,9 +44,6 @@
 							vm.items.splice(index, 1);
 						}
 					});
-				},
-				function (err) {
-
 				}
 			);
 		}
@@ -63,9 +57,6 @@
 					};
 					vm.users.push(user);
 					resetInput('newUser');
-				},
-				function (err) {
-
 				}
 			);
 			
@@ -80,9 +71,6 @@
 							vm.users.splice(index, 1);
 						}
 					});
-				},
-				function (err) {
-
 				}
 			);
 		}

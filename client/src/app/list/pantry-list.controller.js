@@ -17,9 +17,6 @@
 			app.saveSelection(selected.user._id, selected.item._id).then(
 				function (res) {
 					selected.item = null;
-				},
-				function (err) {
-				    console.log(err);
 				}
 			);
 			

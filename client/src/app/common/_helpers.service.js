@@ -6,9 +6,14 @@
 	
 	function _helpers () {
 		this.extractRes = extractRes;
+		this.defaultErrHandler = defaultErrHandler;
 		
 		function extractRes (res) {
 			return res.data.data;
+		}
+		
+		function defaultErrHandler (err) {
+			console.log(err);
 		}
 	}
 	

@@ -24,9 +24,6 @@
 			app.getTopItemsStats().then(
 				function (itemStats) {
 				    vm.itemsStats = itemStats;
-				},
-				function (err) {
-				    console.log(err);
 				}
 			);
 		}
@@ -35,9 +32,6 @@
 			app.getTopUsersStats().then(
 				function (userStats) {
 					vm.usersStats = userStats;
-				},
-				function (err) {
-					console.log(err);
 				}
 			);
 		}
@@ -48,9 +42,6 @@
 			app.getUserHistory(userId).then(
 				function (userHistory) {
 					vm.selectedUser.history = userHistory;
-				},
-				function (err) {
-
 				}
 			);
 		}
