@@ -1,6 +1,6 @@
-;(function () {
-	"use strict";
-	angular.module('pantry').config(config);
+export default function (appModule) {
+
+	appModule.config(config);
 
 	function config ($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise('/pantry/list');
@@ -11,7 +11,7 @@
 				{
 					abstract: true,
 					url: '/pantry',
-					templateUrl: 'app/app.html',
+					template: require('./app.html'),
 					resolve: {
 						items: function (app) {
 							return app.getItems();
@@ -30,7 +30,7 @@
 				'pantry.list',
 				{
 					url: '/list',
-					templateUrl: 'app/list/pantry-list.html',
+					template: require('./list/pantry-list.html'),
 					controller: 'pantryListCtrl',
 					controllerAs: 'vm'
 				}
@@ -39,7 +39,7 @@
 				'pantry.stats',
 				{
 					url: '/stats',
-					templateUrl: 'app/stats/pantry-stats.html',
+					template: require('./stats/pantry-stats.html'),
 					controller: 'pantryStatsCtrl',
 					controllerAs: 'vm'
 				}
@@ -48,11 +48,11 @@
 				'pantry.admin',
 				{
 					url: '/admin',
-					templateUrl: 'app/admin/pantry-admin.html',
+					template: require('./admin/pantry-admin.html'),
 					controller: 'pantryAdminCtrl',
 					controllerAs: 'vm'
 				}
 			)
 		;
 	}
-})();
+}

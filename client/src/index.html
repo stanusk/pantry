@@ -6,13 +6,12 @@
 		<title>PantryApp</title>
 		<meta name="description" content="Showcase pantry consumption tracker">
 
+		<!-- TODO: find out if this is the best option -->
 		<!-- Bootstrap: Latest compiled and minified CSS -->
 		<link rel="stylesheet"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 			integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 			crossorigin="anonymous">
-
-		<link rel="stylesheet" type="text/css" href="_shared/styles/style.css">
 
 	</head>
 
@@ -20,26 +19,5 @@
 		<ui-view></ui-view>
 	</body>
 
-	<!-- external libraries -->
-	<script src="_shared/vendor/angular/angular.js"></script>
-	<script src="_shared/vendor/angular-ui-router/release/angular-ui-router.js"></script>
-	<script src="_shared/vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
-	<!-- config -->
-	<script src="config/config.js"></script>
-
-	<!-- common -->
-	<script src="app/common/common.module.js"></script>
-	<script src="app/common/_helpers.service.js"></script>
-
-	<!-- app -->
-	<script src="app/app.module.js"></script>
-	<script src="app/app.routing.js"></script>
-	<script src="app/app.service.js"></script>
-
-	<script src="app/list/pantry-list.controller.js"></script>
-	<script src="app/stats/pantry-stats.controller.js"></script>
-	<script src="app/admin/pantry-admin.controller.js"></script>
-
-
+	<script src="bundle.js"></script>
 </html>

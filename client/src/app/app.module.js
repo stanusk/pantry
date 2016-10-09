@@ -1,6 +1,8 @@
-;(function () {
-	'use strict';
-	angular.module('pantry', ['ui.router', 'ui.bootstrap', 'common'])
+
+export default function (angular) {
+	var pantryModule = angular.module('pantry', ['ui.router', 'ui.bootstrap', 'common']);
+
+	pantryModule
 		.run(run);
 
 	function run ($http) {
@@ -12,4 +14,6 @@
 		// set common request headers for whole app
 		$http.defaults.headers.common['Content-Type'] = 'application/json';
 	}
-})();
+	
+	return pantryModule;
+};
