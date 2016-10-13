@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+// TODO: add jshint
 
 var config = {
 	context: __dirname + '/src',
@@ -20,15 +21,15 @@ var config = {
 		]
 	},
 
-	plugins: []
+	plugins: [],
+
+	devtool: 'source-map'
 };
 
 if (process.env.NODE_ENV == 'production') {
 	config.output.path = __dirname + '/dist';
-	
+
 	config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-	
-	config.devtool = 'source-map';
 }
 
 module.exports = config;

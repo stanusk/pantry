@@ -1,16 +1,12 @@
 
-
 import angular from 'angular';
-
-require('angular-ui-router');
-require('angular-bootstrap');
 
 // common services
 import commonServices from './common';
 commonServices(angular);
 
 // app
-require('./app.scss');
+import './app.scss';
 
 import appModuleSetup from './app.module';
 var appModule = appModuleSetup(angular);

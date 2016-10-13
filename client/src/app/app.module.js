@@ -1,3 +1,5 @@
+import 'angular-ui-router';
+import 'angular-bootstrap';
 
 export default function (angular) {
 	var pantryModule = angular.module('pantry', ['ui.router', 'ui.bootstrap', 'common']);
