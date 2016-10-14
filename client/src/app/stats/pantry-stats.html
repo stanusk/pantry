@@ -3,7 +3,7 @@
 	<section id="top-stats" class="row">
 		<h2>
 			Top 10
-			<select ng-model="vm.selectedTop" class="cursor-pointer">
+			<select ng-model="$ctrl.selectedTop" class="cursor-pointer">
 				<option value="items">items</option>
 				<option value="users">users</option>
 			</select>
@@ -11,28 +11,28 @@
 
 		<div class=" col-md-8 col-md-offset-2">
 			<table
-				ng-show="vm.selectedTop == 'items'"
+				ng-show="$ctrl.selectedTop == 'items'"
 				class="table table-striped"
 			>
 				<tr>
 					<th>Item</th>
 					<th>Consumed in total</th>
 				</tr>
-				<tr ng-repeat="item in vm.itemsStats | orderBy: '-consumed'">
+				<tr ng-repeat="item in $ctrl.itemsStats | orderBy: '-consumed'">
 					<td>{{item.name}}</td>
 					<td>{{item.consumed}}</td>
 				</tr>
 			</table>
 
 			<table
-				ng-show="vm.selectedTop == 'users'"
+				ng-show="$ctrl.selectedTop == 'users'"
 				class="table table-striped"
 			>
 				<tr>
 					<th>User</th>
 					<th>Consumed items</th>
 				</tr>
-				<tr ng-repeat="user in vm.usersStats | orderBy: '-consumed'">
+				<tr ng-repeat="user in $ctrl.usersStats | orderBy: '-consumed'">
 					<td>{{user.name}}</td>
 					<td>{{user.consumed}}</td>
 				</tr>
@@ -46,13 +46,13 @@
 			History of
 			<select
 				class="cursor-pointer"
-				ng-model="vm.selectedUser"
-				ng-change="vm.showUserHist(vm.selectedUser._id)"
-				ng-options="user as user.name for user in vm.users | orderBy: 'name'"
+				ng-model="$ctrl.selectedUser"
+				ng-change="$ctrl.showUserHist($ctrl.selectedUser._id)"
+				ng-options="user as user.name for user in $ctrl.users | orderBy: 'name'"
 			>
 				<option
 					value=""
-					ng-if="!vm.selectedUser"
+					ng-if="!$ctrl.selectedUser"
 				>
 					- select user -
 				</option>
@@ -68,8 +68,8 @@
 					<th>Consumed</th>
 				</tr>
 				<tr
-					ng-if="vm.selectedUser && vm.selectedUser.history"
-					ng-repeat="item in vm.selectedUser.history | orderBy: '-item.consumed'"
+					ng-if="$ctrl.selectedUser && $ctrl.selectedUser.history"
+					ng-repeat="item in $ctrl.selectedUser.history | orderBy: '-item.consumed'"
 				>
 					<td>{{item.name}}</td>
 					<td>{{item.consumed}}</td>

@@ -6,7 +6,6 @@ class PantrySelectCtrl {
 	}
 
 	submit (selected) {
-		console.log('gule');
 		this.app.saveSelection(selected.user._id, selected.item._id).then(
 			function (res) {
 				selected.item = null;
