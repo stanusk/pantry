@@ -61,7 +61,7 @@
 					count: {$sum: '$history.count'}
 				}},
 				{$project: {_id: '$_id._id', name: '$_id.name', consumed: '$count'}},
-				{$sort: {count: -1, name: 1}},
+				{$sort: {count: -1}},
 				{$limit: limit}
 			],
 			function (err, topItems) {
