@@ -1,9 +1,10 @@
+
 export default function (appModule) {
 
 	appModule.config(config);
 
 	function config ($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise('/pantry/list');
+		$urlRouterProvider.otherwise('/pantry/select');
 
 		$stateProvider
 			.state(
@@ -24,15 +25,6 @@ export default function (appModule) {
 						$scope.items = items;
 						$scope.users = users;
 					}
-				}
-			)
-			.state(
-				'pantry.list',
-				{
-					url: '/list',
-					template: require('./list/pantry-list.html'),
-					controller: 'pantryListCtrl',
-					controllerAs: 'vm'
 				}
 			)
 			.state(

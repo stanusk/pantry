@@ -19,8 +19,8 @@ appRouting(appModule);
 
 
 // components
-import list from './list';
-list(appModule);
+import select from './pantry.select';
+select(appModule);
 
 import stats from './stats';
 stats(appModule);
