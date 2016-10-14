@@ -36,15 +36,6 @@ export default function (appModule) {
 					controllerAs: 'vm'
 				}
 			)
-			.state(
-				'pantry.admin',
-				{
-					url: '/admin',
-					template: require('./admin/pantry-admin.html'),
-					controller: 'pantryAdminCtrl',
-					controllerAs: 'vm'
-				}
-			)
 		;
 	}
 }

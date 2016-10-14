@@ -6,17 +6,17 @@
 
 		<div
 			class="add-record"
-			ng-class="{'has-error': vm.invalid.newItem}"
+			ng-class="{'has-error': $ctrl.invalid.newItem}"
 		>
 			<input
 				ng-model="newItem"
-				ng-change="vm.validate(newItem, 'items')"
+				ng-change="$ctrl.validate(newItem, 'items')"
 				type="text"
 				class="form-control"
 			>
 			<button
-				ng-click="vm.addItem(newItem)"
-				ng-disabled="!newItem || vm.invalid.newItem"
+				ng-click="$ctrl.addItem(newItem)"
+				ng-disabled="!newItem || $ctrl.invalid.newItem"
 				type="button" class="btn btn-success" aria-label="Add item"
 			>
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -25,13 +25,13 @@
 
 		<ul>
 			<li
-				ng-repeat="item in vm.items"
+				ng-repeat="item in $ctrl.items"
 			>
 				{{item.name}}
 				<span
 					class="glyphicon glyphicon-remove-circle cursor-pointer text-danger"
 					aria-hidden="true"
-					ng-click="vm.removeItem(item._id)"
+					ng-click="$ctrl.removeItem(item._id)"
 				></span>
 			</li>
 		</ul>
@@ -45,17 +45,17 @@
 
 		<div
 			class="add-record"
-			ng-class="{'has-error': vm.invalid.newUser}"
+			ng-class="{'has-error': $ctrl.invalid.newUser}"
 		>
 			<input
 				ng-model="newUser"
-				ng-change="vm.validate(newUser, 'users')"
+				ng-change="$ctrl.validate(newUser, 'users')"
 				type="text"
 				class="form-control"
 			>
 			<button
-				ng-click="vm.addUser(newUser)"
-				ng-disabled="!newUser || vm.invalid.newUser"
+				ng-click="$ctrl.addUser(newUser)"
+				ng-disabled="!newUser || $ctrl.invalid.newUser"
 				type="button" class="btn btn-success" aria-label="Add item"
 			>
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -64,13 +64,13 @@
 
 		<ul>
 			<li
-				ng-repeat="user in vm.users"
+				ng-repeat="user in $ctrl.users"
 			>
 				{{user.name}}
 				<span
 					class="glyphicon glyphicon-remove-circle cursor-pointer text-danger"
 					aria-hidden="true"
-					ng-click="vm.removeUser(user._id)"
+					ng-click="$ctrl.removeUser(user._id)"
 				></span>
 			</li>
 		</ul>

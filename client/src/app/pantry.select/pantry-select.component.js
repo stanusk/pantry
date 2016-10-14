@@ -19,7 +19,6 @@ export const pantrySelect = {
 	controller: PantrySelectCtrl,
 	template: require('./pantry-select.html'),
 	bindings: {
-		// todo: prerobit na <
 		items: '<',
 		users: '<'
 	}
