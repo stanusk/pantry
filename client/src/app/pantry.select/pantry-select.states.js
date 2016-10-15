@@ -4,11 +4,11 @@ export const pantrySelectState = {
 	url: '/select',
 	component: 'pantrySelect',
 	resolve: {
-		items: function (app) {
-			return app.getItems();
+		items: AppService => {
+			return AppService.getItems();
 		},
-		users: function (app) {
-			return app.getUsers();
+		users: AppService => {
+			return AppService.getUsers();
 		}
 	}
 };

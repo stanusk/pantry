@@ -1,29 +1,23 @@
 
-import angular from 'angular';
+import {ngmodule, loadNg1Module} from './bootstrap/ngmodule';
 
-// common services
-import commonServices from './common';
-commonServices(angular);
+import {app} from './app.component';
+import {appRootState} from './app.states';
+import {AppService} from './app.service';
 
-// app
-import './app.scss';
+// todo: common module
+import {_helpers} from '../app/common/_helpers.service';
 
-import appModuleSetup from './app.module';
-var appModule = appModuleSetup(angular);
+import {otherwiseConfigBlock, defaultContentTypeRunBlock, uiRouterVisualiserRunBlock} from '../app/app.config'
 
-import appService from './app.service';
-appService(appModule);
+const appModule = {
+	components: {app},
+	services: {_helpers, AppService},
+	states: [appRootState],
+	configBlocks: [otherwiseConfigBlock],
+	runBlocks: [defaultContentTypeRunBlock, uiRouterVisualiserRunBlock]
+};
 
-import appRouting from './app.routing';
-appRouting(appModule);
+loadNg1Module(ngmodule, appModule);
 
-
-// components
-import select from './pantry.select';
-select(appModule);
-
-import stats from './stats';
-stats(appModule);
-
-import admin from './admin';
-admin(appModule);
+require('./app.scss');

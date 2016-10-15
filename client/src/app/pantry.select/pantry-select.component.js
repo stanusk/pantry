@@ -1,7 +1,7 @@
 
 class PantrySelectCtrl {
-	constructor (app) {
-		this.app = app;
+	constructor (AppService) {
+		this.app = AppService;
 		this.selected = {};
 	}
 

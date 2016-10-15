@@ -1,13 +1,12 @@
+import {loadNg1Module, ngmodule} from "../bootstrap/ngmodule";
+
 import {pantrySelect} from './pantry-select.component';
 import {pantrySelectState} from './pantry-select.states';
 
-//var states =
+const appModule = {
+	components: {pantrySelect},
+	states: [pantrySelectState]
+};
 
-export default function (module) {
-	require('./pantry-select.scss');
-
-	module
-		.component('pantrySelect', pantrySelect)
-		.config( $stateProvider => {$stateProvider.state(pantrySelectState)} )
-	;
-}
+loadNg1Module(ngmodule, appModule);
+require('./pantry-select.scss');

@@ -1,81 +1,88 @@
-export default function (appModule) {
 
-	appModule.service('app', AppService);
+/**
+ * todo: make into docu
+ * 
+ * this.getItems = getItems;
+ * this.getUsers = getUsers;
+ * this.saveSelection = saveSelection;
 
-	function AppService ($http, _helpers) {
-		this.getItems = getItems;
-		this.getUsers = getUsers;
-		this.saveSelection = saveSelection;
+ * this.getTopItemsStats = getTopItemsStats;
+ * this.getTopUsersStats = getTopUsersStats;
+ * this.getUserHistory = getUserHistory;
 
-		this.getTopItemsStats = getTopItemsStats;
-		this.getTopUsersStats = getTopUsersStats;
-		this.getUserHistory = getUserHistory;
+ * this.addItem = addItem;
+ * this.removeItem = removeItem;
+ * this.addUser = addUser;
+ * this.removeUser = removeUser;
+ */
 
-		this.addItem = addItem;
-		this.removeItem = removeItem;
-		this.addUser = addUser;
-		this.removeUser = removeUser;
+export class AppService {
+	constructor ($http, _helpers) {
+		this.$http = $http;
+		this._helpers = _helpers;
 
-		var apiLink = PANTRY.config.apiLink;
+		// todo: make local variable
+		this.apiLink = PANTRY.config.apiLink;
+	}
 
-		function getItems () {
-			return $http.get(apiLink + 'items/list')
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
 
-		function getUsers () {
-			return $http.get(apiLink + 'users')
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	getItems () {
+		return this.$http.get(this.apiLink + 'items/list')
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
 
-		function saveSelection (userId, itemId) {
-			return $http.put(apiLink + 'items/' + itemId + '/users/' + userId)
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	getUsers () {
+		return this.$http.get(this.apiLink + 'users')
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
 
-		function getTopItemsStats () {
-			return $http.get(apiLink + 'stats/items/top/10')
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	saveSelection (userId, itemId) {
+		return this.$http.put(this.apiLink + 'items/' + itemId + '/users/' + userId)
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
 
-		function getTopUsersStats () {
-			return $http.get(apiLink + 'stats/users/top/10')
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	getTopItemsStats () {
+		return this.$http.get(this.apiLink + 'stats/items/top/10')
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
 
-		function getUserHistory (userId) {
-			return $http.get(apiLink + 'stats/users/' + userId)
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	getTopUsersStats () {
+		return this.$http.get(this.apiLink + 'stats/users/top/10')
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
 
-		function addItem (itemName) {
-			return $http.post(apiLink + 'items', {name: itemName})
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	getUserHistory (userId) {
+		return this.$http.get(this.apiLink + 'stats/users/' + userId)
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
 
-		function removeItem (itemId) {
-			return $http.delete(apiLink + 'items/' + itemId)
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	addItem (itemName) {
+		return this.$http.post(this.apiLink + 'items', {name: itemName})
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
 
-		function addUser (userName) {
-			return $http.post(apiLink + 'users', {name: userName})
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	removeItem (itemId) {
+		return this.$http.delete(this.apiLink + 'items/' + itemId)
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
 
-		function removeUser (userId) {
-			return $http.delete(apiLink + 'users/' + userId)
-				.then(_helpers.extractRes)
-				.catch(_helpers.defaultErrHandler);
-		}
+	addUser (userName) {
+		return this.$http.post(this.apiLink + 'users', {name: userName})
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
+	}
+
+	removeUser (userId) {
+		return this.$http.delete(this.apiLink + 'users/' + userId)
+			.then(this._helpers.extractRes)
+			.catch(this._helpers.defaultErrHandler);
 	}
 }

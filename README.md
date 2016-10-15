@@ -27,7 +27,6 @@ Live showcase version cen be found [here](pantry.neviem.me).
 
 ## Prerequisites
 
-- gulp
 - node.js (built on v4.4.4)
 - npm (built on v2.15.1)
 - mongoDB (built on shell version 3.2.7)
@@ -40,9 +39,8 @@ Live showcase version cen be found [here](pantry.neviem.me).
 ## To run on localhost
 
  1. client folder (`cd client/`)
-    - `bower install`
     - `npm install`
-    - `gulp`
+    - `npm start`
 
  2. server folder (`cd server/`)
     - `npm install`

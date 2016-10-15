@@ -4,8 +4,8 @@ export const pantryStatsState = {
 	url: '/stats',
 	component: 'pantryStats',
 	require: {
-		users: app => {
-			return app.getUsers();
+		users: AppService => {
+			return AppService.getUsers();
 		}
 	}
 };

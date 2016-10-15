@@ -1,7 +1,7 @@
 
 class PantryAdminCtrl {
-	constructor (app) {
-		this.app = app;
+	constructor (AppService) {
+		this.app = AppService;
 	}
 
 	$onInit () {
