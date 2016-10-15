@@ -1,6 +1,7 @@
 
 class PantryAdminCtrl {
 	constructor (AppService) {
+		"ngInject";
 		this.app = AppService;
 	}
 

@@ -5,9 +5,11 @@ export const pantrySelectState = {
 	component: 'pantrySelect',
 	resolve: {
 		items: AppService => {
+			"ngInject";
 			return AppService.getItems();
 		},
 		users: AppService => {
+			"ngInject";
 			return AppService.getUsers();
 		}
 	}

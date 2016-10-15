@@ -2,7 +2,7 @@
   "name": "pantry",
   "scripts": {
     "start": "node node_modules/.bin/webpack-dev-server --inline --hot --content-base src",
-    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html"
+    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/public/index.html"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

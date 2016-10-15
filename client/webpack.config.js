@@ -27,7 +27,7 @@ var config = {
 };
 
 if (process.env.NODE_ENV == 'production') {
-	config.output.path = __dirname + '/dist';
+	config.output.path = __dirname + '/dist/public';
 
 	config.plugins.push(new webpack.optimize.UglifyJsPlugin());
 }

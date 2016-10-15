@@ -1,6 +1,8 @@
 
 class PantrySelectCtrl {
 	constructor (AppService) {
+		"ngInject";
+		
 		this.app = AppService;
 		this.selected = {};
 	}

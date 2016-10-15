@@ -12,6 +12,6 @@ export const defaultContentTypeRunBlock = ['$http', $http => {
 
 // Show ui-router-visualizer
 export const uiRouterVisualiserRunBlock = ['$uiRouter', $uiRouter => {
-	if (PANTRY.config.env = 'development')
+	if (PANTRY.config.env == 'development')
 		visualizer($uiRouter);
 }];

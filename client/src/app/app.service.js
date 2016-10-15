@@ -18,6 +18,8 @@
 
 export class AppService {
 	constructor ($http, _helpers) {
+		"ngInject";
+		
 		this.$http = $http;
 		this._helpers = _helpers;
 

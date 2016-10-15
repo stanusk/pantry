@@ -5,6 +5,7 @@ export const pantryStatsState = {
 	component: 'pantryStats',
 	require: {
 		users: AppService => {
+			"ngInject";
 			return AppService.getUsers();
 		}
 	}
